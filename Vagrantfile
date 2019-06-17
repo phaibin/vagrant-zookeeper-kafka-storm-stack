@@ -7,7 +7,7 @@ MY_VAGRANT_DOT_FILE = ENV['VAGRANT_DOTFILE_PATH'] || Dir.pwd + '/.vagrant'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "alonsodomin/ubuntu-trusty64-java8"
   memory_mb = 1024
 
 # First, install python
@@ -26,6 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     'kafka-node-3'            => "192.168.5.112",
     'storm-nimbus-node-1'     => "192.168.5.120",
     'storm-supervisor-node-1' => "192.168.5.130",
+    'storm-supervisor-node-2' => "192.168.5.131",
   }
 
   cluster.each_with_index do |(short_name, ip), idx|

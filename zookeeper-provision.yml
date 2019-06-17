@@ -3,7 +3,7 @@
   become: yes
   vars:
     zookeeper:
-      version: 3.4.11
+      version: 3.4.14
       mirror: http://www-us.apache.org/dist
       user: zookeeper
       group: root
@@ -25,7 +25,6 @@
       group: "{{zookeeper.group}}"
       state: present
 
-  - include: init_java.yml
   - include: init_network.yml
 
   - name: Zookeeper | Create base directory
@@ -39,7 +38,7 @@
 
   - name: Zookeeper | Download
     get_url:
-      url: http://mirror.dkd.de/apache/zookeeper/zookeeper-{{zookeeper.version}}/zookeeper-{{zookeeper.version}}.tar.gz
+      url: http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-{{zookeeper.version}}/zookeeper-{{zookeeper.version}}.tar.gz
       dest: /tmp/zookeeper-{{zookeeper.version}}.tar.gz
 
   - name: Zookeeper | Extract Zookeeper

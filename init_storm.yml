@@ -15,7 +15,7 @@
 
   - name: Storm | Download Storm
     get_url:
-      url: http://mirror.dkd.de/apache/storm/apache-storm-{{storm.version}}/apache-storm-{{storm.version}}.tar.gz
+      url: http://archive.apache.org/dist/storm/apache-storm-{{storm.version}}/apache-storm-{{storm.version}}.tar.gz
       dest: /tmp/apache-storm-{{storm.version}}.tar.gz
 
   - name: Storm | Extract Storm
